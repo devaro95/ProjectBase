@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "640073358104",
+    "project_id": "rmy-gym",
+    "storage_bucket": "rmy-gym.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:640073358104:android:f9bc63b47bdb14b3019c6d",
+        "android_client_info": {
+          "package_name": "com.rmygym.mock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "640073358104-0fo1m8h5tckhupe5thmqdq9b0vk5acvu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDKs317HGCEzdHAq8eLd_Ehc3i5ezNLx8Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "640073358104-0fo1m8h5tckhupe5thmqdq9b0vk5acvu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

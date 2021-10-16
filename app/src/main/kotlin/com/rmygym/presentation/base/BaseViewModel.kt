@@ -18,4 +18,8 @@ abstract class BaseViewModel<T, NS : EmaNavigationState> : EmaViewModel<T, NS>()
     override fun onStartFirstTime(statePreloaded: Boolean) {
         // Nothing to do
     }
+
+    fun onError(error: Exception) {
+        updateToErrorState(error)
+    }
 }

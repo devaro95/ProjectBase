@@ -33,4 +33,8 @@ object Plugins {
         const val ID = "org.sonarqube"
         const val VERSION = "3.1"
     }
+
+    object Google {
+        const val GOOGLE_SERVICES = "com.google.gms.google-services"
+    }
 }

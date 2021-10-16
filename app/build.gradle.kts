@@ -2,8 +2,8 @@ plugins {
     id(Plugins.AndroidApplication.ID)
     kotlin(Plugins.KotlinAndroid.ID)
     kotlin(Plugins.KotlinAndroidExtensions.ID)
-
     id(Plugins.Ktlint.ID)
+    id(Plugins.Google.GOOGLE_SERVICES)
 }
 
 android {
@@ -115,4 +115,12 @@ dependencies {
 
     testImplementation(Dependencies.ARCH)
     testImplementation(Dependencies.EMA_TESTING)
+
+    implementation(platform("com.google.firebase:firebase-bom:28.4.2"))
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore:23.0.4")
+    implementation("com.google.android.gms:play-services-auth:19.2.0")
+    implementation("com.google.firebase:firebase-analytics:19.0.2")
+    implementation("com.google.gms:google-services:4.3.3")
 }
