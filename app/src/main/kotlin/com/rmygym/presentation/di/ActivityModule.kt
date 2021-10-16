@@ -4,6 +4,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import com.rmygym.presentation.base.BaseActivity
 import com.rmygym.presentation.dialog.SimpleDialog
+import com.rmygym.presentation.ui.login.LoginNavigator
 import com.rmygym.presentation.ui.main.MainNavigator
 import com.rmygym.presentation.ui.main.MainViewModel
 import com.rmygym.presentation.ui.main.MainViewState
@@ -15,6 +16,7 @@ import org.kodein.di.generic.provider
 import org.kodein.di.generic.singleton
 
 fun injectionActivityModule(activity: BaseActivity) = Kodein.Module(name = "ActivityModule") {
+
     bind<NavController>() with singleton { activity.navController }
 
     bind<FragmentManager>() with provider { activity.supportFragmentManager }
@@ -23,9 +25,15 @@ fun injectionActivityModule(activity: BaseActivity) = Kodein.Module(name = "Acti
 
     bind<MainViewState>() with singleton { MainViewState() }
 
+    /** Dialogs **/
+
+    bind<SimpleDialog.Provider>() with provider { SimpleDialog.Provider(instance()) }
+
+    /** Navigators **/
+
     bind<MainNavigator>() with singleton { MainNavigator(instance()) }
 
     bind<SplashNavigator>() with singleton { SplashNavigator(instance()) }
 
-    bind<SimpleDialog.Provider>() with provider { SimpleDialog.Provider(instance()) }
+    bind<LoginNavigator>() with singleton { LoginNavigator(instance()) }
 }

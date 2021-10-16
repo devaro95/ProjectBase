@@ -3,11 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main.xml"
-    app:startDestination="@id/homeViewFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/homeViewFragment"
-        android:name="com.rmygym.presentation.ui.home.HomeViewFragment"
-        android:label="HomeViewFragment"
+        android:id="@+id/loginFragment"
+        android:name="com.rmygym.presentation.ui.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.rmygym.presentation.ui.register.RegisterFragment"
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.rmygym.presentation.ui.home.HomeFragment"
+        android:label="HomeFragment"
         tools:layout="@layout/fragment_home" />
 </navigation>

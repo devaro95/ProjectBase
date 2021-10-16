@@ -5,8 +5,8 @@ import com.rmygym.presentation.base.BaseFragment
 import com.rmygym.presentation.ui.main.MainNavigator
 import org.kodein.di.generic.instance
 
-class HomeViewFragment :
-    BaseFragment<HomeViewState, HomeViewModel, MainNavigator.Navigation>() {
+class HomeFragment :
+    BaseFragment<HomeState, HomeViewModel, MainNavigator.Navigation>() {
 
     override val layoutId: Int = R.layout.fragment_home
 

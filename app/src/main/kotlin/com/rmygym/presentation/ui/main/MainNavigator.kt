@@ -7,12 +7,5 @@ import es.babel.easymvvm.core.navigator.EmaNavigationState
 
 class MainNavigator(override val navController: NavController) :
     EmaNavigator<MainNavigator.Navigation> {
-
-    sealed class Navigation : EmaNavigationState {
-        object ToBack : MainNavigator.Navigation() {
-            override fun navigateWith(navigator: EmaBaseNavigator<out EmaNavigationState>) {
-                // Nothing to do
-            }
-        }
-    }
+    sealed class Navigation : EmaNavigationState
 }

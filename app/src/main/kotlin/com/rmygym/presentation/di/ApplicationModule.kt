@@ -5,6 +5,7 @@ import android.content.res.Resources
 import com.rmygym.data.manager.ContextNetworkManager
 import com.rmygym.domain.manager.NetworkManager
 import com.rmygym.domain.manager.ResourceManager
+import com.rmygym.domain.usecase.LoginUseCase
 import com.rmygym.presentation.manager.ContextResourceManager
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -19,4 +20,6 @@ fun generateApplicationModule(app: Application) = Kodein.Module(name = "AppModul
     bind<ResourceManager>() with singleton { ContextResourceManager(app) }
 
     bind<NetworkManager>() with singleton { ContextNetworkManager(instance()) }
+
+    bind<LoginUseCase>() with singleton { LoginUseCase(instance()) }
 }
