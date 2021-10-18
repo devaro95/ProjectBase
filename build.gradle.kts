@@ -7,6 +7,15 @@ plugins {
     id(Plugins.Sonarqube.ID) version Plugins.Sonarqube.VERSION
 }
 
+buildscript {
+    repositories {
+        google()
+    }
+    dependencies {
+        classpath("com.google.gms:google-services:4.3.10")
+    }
+}
+
 allprojects {
     repositories {
         google()
