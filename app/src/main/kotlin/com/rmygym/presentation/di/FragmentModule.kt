@@ -18,7 +18,7 @@ fun generateFragmentModule(fragment: Fragment) = Kodein.Module(name = "FragmentM
 
     bind<HomeViewModel>() with singleton { HomeViewModel() }
 
-    bind<RegisterViewModel>() with singleton { RegisterViewModel() }
+    bind<RegisterViewModel>() with singleton { RegisterViewModel(instance()) }
 
     bind<LoginViewModel>() with singleton { LoginViewModel(instance()) }
 }

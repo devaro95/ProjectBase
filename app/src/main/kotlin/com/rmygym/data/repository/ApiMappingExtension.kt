@@ -1,8 +1,7 @@
 package com.rmygym.data.repository
 
-import com.google.firebase.auth.FirebaseUser
-import com.rmygym.domain.model.UserModel
-import es.babel.easymvvm.core.extension.checkNull
+import com.rmygym.data.model.UserApi
+import com.rmygym.domain.model.request.RequestRegisterModel
 
 /**
  * <p>
@@ -12,6 +11,13 @@ import es.babel.easymvvm.core.extension.checkNull
  * @author <a href=“mailto:alvaro.montero@babel.es”>Alvaro Montero</a>
  */
 
-fun FirebaseUser.toDomainModel() = UserModel(
-    name = displayName.checkNull()
+fun RequestRegisterModel.toDataModel() = UserApi(
+    name = name,
+    username = username,
+    email = email,
+    height = height,
+    weight = weight,
+    firstSurname = firstSurname,
+    secondSurname = secondSurname,
+    age = age
 )

@@ -29,30 +29,32 @@ abstract class BaseFragment<S : EmaBaseState, VM : BaseViewModel<S, NS>, NS : Em
         (viewModel as BaseViewModel<*, *>).mainViewModel = mainViewModel
     }
 
-    override fun onSingleEvent(data: EmaExtraData) {
-        // Nothing to do
-    }
+    override fun onSingleEvent(data: EmaExtraData) = Unit
 
     override fun onStateError(error: Throwable) {
-        // Nothing to do
+        onError(error)
     }
 
     override fun onStateAlternative(data: EmaExtraData) {
-        // Handle common dialogs like loading one
+        onAlternative(data)
     }
 
-    override fun onStateNormalFirstTime(data: S) {
-        // Nothing to do
-    }
+    override fun onStateNormalFirstTime(data: S) = Unit
 
     override fun onStateNormal(data: S) {
-        // Handle common dialogs like loading one
+        onNormal(data)
     }
 
     override fun onNavigation(navigation: EmaNavigationState?) {
         super.onNavigation(navigation)
         view?.let { view -> hideKeyboard(view) }
     }
+
+    abstract fun onError(error: Throwable)
+
+    abstract fun onNormal(data: S)
+
+    abstract fun onAlternative(data: EmaExtraData)
 
     private fun hideKeyboard(view: View) {
         (requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager)
