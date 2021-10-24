@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomSelectorExerciseView">
+        <attr name="labelTitle" format="string" />
+    </declare-styleable>
+    <attr name="selectorExerciseStyle" format="reference" />
+</resources>
+
+
+
+
