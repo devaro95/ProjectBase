@@ -2,6 +2,7 @@ package com.rmygym.presentation.ui
 
 import com.rmygym.BuildConfig
 import com.rmygym.data.di.generateDataModule
+import com.rmygym.presentation.config.initStaticConfig
 import com.rmygym.presentation.di.generateApplicationModule
 import es.babel.easymvvm.android.base.EmaApplication
 import org.kodein.di.Kodein
@@ -17,6 +18,8 @@ class Application : EmaApplication() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
+
+        initStaticConfig()
     }
 
     override fun injectAppModule(kodein: Kodein.MainBuilder): Kodein.Module {
