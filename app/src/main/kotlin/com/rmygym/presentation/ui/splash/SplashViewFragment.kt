@@ -1,14 +1,13 @@
 package com.rmygym.presentation.ui.splash
 
+import androidx.compose.runtime.Composable
 import com.rmygym.R
-import com.rmygym.presentation.di.generateFragmentModule
-import es.babel.easymvvm.android.ui.EmaFragment
+import com.rmygym.presentation.base.BaseFragment
 import es.babel.easymvvm.core.state.EmaExtraData
-import org.kodein.di.Kodein
 import org.kodein.di.generic.instance
 
 class SplashViewFragment :
-    EmaFragment<SplashViewState, SplashViewModel, SplashNavigator.Navigation>() {
+    BaseFragment<SplashViewState, SplashViewModel, SplashNavigator.Navigation>() {
 
     override val fragmentViewModelScope: Boolean = true
 
@@ -18,30 +17,17 @@ class SplashViewFragment :
 
     override val viewModelSeed: SplashViewModel by instance()
 
-    override fun injectFragmentModule(kodein: Kodein.MainBuilder): Kodein.Module =
-        generateFragmentModule(fragment = this)
-
     override fun onInitialized(viewModel: SplashViewModel) {
-        // Nothing to do
     }
 
-    override fun onSingleEvent(data: EmaExtraData) {
-        // Nothing to do
+    @Composable
+    override fun OnNormal(data: SplashViewState) {
+        SplashScreen()
     }
 
-    override fun onStateAlternative(data: EmaExtraData) {
-        // Nothing to do
+    override fun onError(error: Throwable) {
     }
 
-    override fun onStateError(error: Throwable) {
-        // Nothing to do
-    }
-
-    override fun onStateNormal(data: SplashViewState) {
-        // Nothing to do
-    }
-
-    override fun onStateNormalFirstTime(data: SplashViewState) {
-        // Nothing to do
+    override fun onAlternative(data: EmaExtraData) {
     }
 }

@@ -19,7 +19,7 @@ class MainViewModel : EmaViewModel<MainViewState, MainNavigator.Navigation>() {
     }
 
     fun onActionBackPressed() {
-        navigate(MainNavigator.Navigation.ToBack)
+        navigateBack()
     }
 
     companion object {

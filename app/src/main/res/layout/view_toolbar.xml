@@ -24,7 +24,5 @@
             android:visibility="gone"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_scrollFlags="enterAlwaysCollapsed"/>
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </com.google.android.material.appbar.AppBarLayout>

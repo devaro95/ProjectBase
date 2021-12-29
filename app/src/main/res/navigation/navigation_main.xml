@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_main.xml"
-    app:startDestination="@id/homeViewFragment">
+    app:startDestination="@id/splashViewFragment">
 
     <fragment
-        android:id="@+id/homeViewFragment"
-        android:name="com.rmygym.presentation.ui.home.HomeViewFragment"
-        android:label="HomeViewFragment"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/splashViewFragment"
+        android:name="com.rmygym.presentation.ui.splash.SplashViewFragment"
+        android:label="SplashViewFragment" />
 </navigation>

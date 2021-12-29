@@ -5,12 +5,12 @@ object Plugins {
      */
     object KotlinAndroid {
         const val ID = "android"
-        const val VERSION = "1.5.0"
+        const val VERSION = "1.5.21"
     }
 
     object KotlinAndroidExtensions {
         const val ID = "android.extensions"
-        const val VERSION = "1.4.21"
+        const val VERSION = "1.4.31"
     }
 
     /**

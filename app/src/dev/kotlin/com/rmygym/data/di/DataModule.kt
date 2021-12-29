@@ -7,11 +7,10 @@ import es.babel.easymvvm.core.concurrency.DefaultAsyncManager
 import es.babel.easymvvm.core.concurrency.DefaultConcurrencyManager
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
-import org.kodein.di.generic.instance
 import org.kodein.di.generic.singleton
 
 fun generateDataModule() = Kodein.Module(name = "DataModule") {
-    bind<NetworkRepository>() with singleton { com.rmygym.data.repository.NetworkRepository(instance()) }
+    bind<NetworkRepository>() with singleton { com.rmygym.data.repository.NetworkRepository() }
 
     bind<AsyncManager>() with singleton { DefaultAsyncManager() }
 

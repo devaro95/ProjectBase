@@ -1,11 +1,14 @@
 package com.rmygym.presentation.ui.splash
 
-import es.babel.easymvvm.android.viewmodel.EmaViewModel
+import com.rmygym.presentation.base.BaseViewModel
+import com.rmygym.presentation.ui.main.MainViewState
 import kotlinx.coroutines.delay
 
-class SplashViewModel : EmaViewModel<SplashViewState, SplashNavigator.Navigation>() {
+class SplashViewModel : BaseViewModel<SplashViewState, SplashNavigator.Navigation>() {
 
     override val initialViewState: SplashViewState = SplashViewState()
+
+    override fun provideToolbar() = MainViewState.Toolbar()
 
     override fun onResume(firstTime: Boolean) {
         // Nothing to do
@@ -19,6 +22,6 @@ class SplashViewModel : EmaViewModel<SplashViewState, SplashNavigator.Navigation
     }
 
     private companion object {
-        const val SPLASH_DELAY = 3000L
+        const val SPLASH_DELAY = 2000L
     }
 }

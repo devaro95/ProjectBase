@@ -18,6 +18,10 @@ android {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
 
+    buildFeatures {
+        compose = true
+    }
+
     defaultConfig {
         applicationId = Android.DefaultConfig.APPLICATION_ID
         minSdkVersion(Android.DefaultConfig.MIN_SDK_VERSION)
@@ -81,6 +85,10 @@ android {
     sourceSets {
         map { it.java.srcDir(String.format(Android.SourceSet.SRC_DIR, it.name)) }
     }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.0.1"
+    }
 }
 
 dependencies {
@@ -98,6 +106,8 @@ dependencies {
     implementation(Dependencies.MATERIAL)
     implementation(Dependencies.MAPS)
     implementation(Dependencies.LOCATION)
+    implementation(Dependencies.AUTH)
+    implementation(Dependencies.SERVICES)
 
     implementation(Dependencies.MESSAGING)
 
@@ -116,11 +126,15 @@ dependencies {
     testImplementation(Dependencies.ARCH)
     testImplementation(Dependencies.EMA_TESTING)
 
-    implementation(platform("com.google.firebase:firebase-bom:28.4.2"))
-    implementation("com.google.firebase:firebase-analytics-ktx")
-    implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-firestore:23.0.4")
-    implementation("com.google.android.gms:play-services-auth:19.2.0")
-    implementation("com.google.firebase:firebase-analytics:19.0.2")
-    implementation("com.google.gms:google-services:4.3.3")
+    implementation(platform(Dependencies.BOM))
+    implementation(Dependencies.ANALYTICS)
+    implementation(Dependencies.FIREBASE_AUTH)
+    implementation(Dependencies.FIRESTORE)
+
+    implementation(Dependencies.ACTIVITY_COMPOSE)
+    implementation(Dependencies.MATERIAL_COMPOSE)
+    implementation(Dependencies.ANIMATION)
+    implementation(Dependencies.TOOLING)
+    implementation(Dependencies.VIEW_MODEL)
+    implementation(Dependencies.LIVEDATA)
 }

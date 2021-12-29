@@ -1,5 +1,5 @@
 object Android {
-    const val COMPILE_SDK_VERSION = 30
+    const val COMPILE_SDK_VERSION = 31
 
     object DefaultConfig {
         const val APPLICATION_ID = "com.rmygym"
