@@ -11,7 +11,7 @@ class SelectorAdapter(override val listItems: MutableList<MuscleExerciseModel>) 
     override val layoutItemId = R.layout.item_selector_muscles
 
     override fun View.bind(item: MuscleExerciseModel, viewType: Int) {
-        ivItemMuscleExercise.setImageDrawable(item.icon)
+        ivItemMuscleExercise.setImageResource(item.icon)
         tvItemMuscleExercise.text = item.title
     }
 

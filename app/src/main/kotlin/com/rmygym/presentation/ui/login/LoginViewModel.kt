@@ -20,8 +20,9 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) :
 
     fun onActionLoginClick() {
         checkDataState {
-            if (it.fieldsAreValid()) updateToErrorState(InvalidCredentialsException())
-            else it.executeLoginUseCase()
+//            if (it.fieldsAreValid()) updateToErrorState(InvalidCredentialsException())
+//            else it.executeLoginUseCase()
+            onLoginSuccess(UserModel())
         }
     }
 

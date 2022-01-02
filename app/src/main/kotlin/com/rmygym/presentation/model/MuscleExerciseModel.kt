@@ -1,8 +1,10 @@
 package com.rmygym.presentation.model
 
-import android.graphics.drawable.Drawable
+import com.rmygym.R
 
 data class MuscleExerciseModel(
+    val type: MuscleGroupType,
     val title: String,
-    val icon: Drawable
+    val icon: Int = R.drawable.ic_exercise_default,
+    val weight: Double
 )

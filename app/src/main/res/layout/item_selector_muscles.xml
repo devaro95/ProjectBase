@@ -9,6 +9,7 @@
         android:id="@+id/ivItemMuscleExercise"
         android:layout_width="@dimen/dimen_24"
         android:layout_height="@dimen/dimen_24"
+        android:contentDescription="@string/app_name"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
