@@ -22,7 +22,12 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.rmygym.presentation.ui.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_selectorExerciseFragment"
+            app:destination="@id/selectorExerciseFragment" />
+    </fragment>
     <fragment
         android:id="@+id/splashViewFragment2"
         android:name="com.rmygym.presentation.ui.splash.SplashViewFragment"
@@ -31,4 +36,9 @@
             android:id="@+id/action_splashViewFragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/selectorExerciseFragment"
+        android:name="com.rmygym.presentation.ui.selector.SelectorExerciseFragment"
+        android:label="SelectorExerciseFragment"
+        tools:layout="@layout/fragment_selector_exercise" />
 </navigation>
