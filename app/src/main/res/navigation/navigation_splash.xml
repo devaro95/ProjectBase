@@ -6,7 +6,7 @@
     app:startDestination="@id/splashViewFragment">
     <fragment
         android:id="@+id/splashViewFragment"
-        android:name="com.rmygym.presentation.ui.splash.SplashViewFragment"
+        android:name="com.projectBase.ui.splash.SplashViewFragment"
         android:label="Splash"
         tools:layout="@layout/fragment_splash">
         <action
@@ -15,7 +15,7 @@
     </fragment>
     <activity
         android:id="@+id/mainViewActivity"
-        android:name="com.rmygym.presentation.ui.main.MainViewActivity"
+        android:name="com.projectBase.ui.main.MainActivity"
         android:label="MainViewActivity"
         tools:layout="@layout/fragment_home" />
 </navigation>

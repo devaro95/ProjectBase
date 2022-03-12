@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+def cfg = rootProject.ext.configuration
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+        versionCode cfg.version_code
+        versionName cfg.version_name
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    flavorDimensions 'environment'
+
+    productFlavors {
+        mock {
+            dimension 'environment'
+            buildConfigField 'Boolean', 'PORTRAIT_ORIENTATION', 'false'
+        }
+
+        dev {
+            dimension 'environment'
+            buildConfigField 'Boolean', 'PORTRAIT_ORIENTATION', 'false'
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+}
+
+configurations {
+    mockDebugImplementation
+    mockReleaseImplementation
+    devDebugImplementation
+    devReleaseImplementation
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+
+    //EMA
+    implementation presentationDependencies.emaAndroid
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation presentationDependencies.coreKotlin
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+}
