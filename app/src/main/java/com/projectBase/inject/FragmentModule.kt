@@ -3,6 +3,7 @@ package com.projectBase.inject
 import androidx.fragment.app.Fragment
 import com.projectBase.ui.home.HomeAndroidViewModel
 import com.projectBase.ui.home.HomeViewModel
+import com.projectBase.ui.splash.SplashAndroidViewModel
 import com.projectBase.ui.splash.SplashViewModel
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -25,6 +26,8 @@ fun generateFragmentModule(fragment: Fragment) = Kodein.Module(name = "FragmentM
     bind<SplashViewModel>() with singleton { SplashViewModel() }
 
     bind<HomeAndroidViewModel>() with singleton { HomeAndroidViewModel(instance()) }
+
+    bind<SplashAndroidViewModel>() with singleton { SplashAndroidViewModel(instance()) }
 
     //NAVIGATION HANDLERS//
 

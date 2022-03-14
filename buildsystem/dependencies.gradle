@@ -8,6 +8,11 @@ project.ext {
     firebaseVersion = "17.1.0"
     firebaseMessagingVersion = "20.0.0"
     emaVersion = "3.0.0"
+    activityCompose = "1.4.0"
+    compose = "1.0.5"
+    composeViewModel = "2.4.0"
+    composeLivedata = "1.1.0-rc01"
+    constraintLayout = "2.1.3"
 
     app = [
             versionCode: 1,
@@ -18,9 +23,16 @@ project.ext {
             kotlinJdk        : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:" + project.kotlin_version,
             core             : "androidx.test:core:" + project.coreVersion,
             coreKotlin       : "androidx.test:core-ktx:" + project.coreVersion,
+            constraintLayout : "androidx.constraintlayout:constraintlayout:" + project.constraintLayout,
             emaAndroid       : "com.github.carlosmateo89.Ema:ema-android:" + project.emaVersion,
             emaTesting       : "com.github.carlosmateo89.Ema:ema-testing-core:" + project.emaVersion,
-            emaAndroidTesting: "com.github.carlosmateo89.Ema:ema-testing-android:" + project.emaVersion
+            emaAndroidTesting: "com.github.carlosmateo89.Ema:ema-testing-android:" + project.emaVersion,
+            composeActivity  : "androidx.activity:activity-compose:" + project.activityCompose,
+            composeMaterial  : "androidx.compose.material:material:" + project.compose,
+            composeAnimation : "androidx.compose.animation:animation:" + project.compose,
+            composeTool      : "androidx.compose.ui:ui-tooling:" + project.compose,
+            composeViewModel : "androidx.lifecycle:lifecycle-viewmodel-compose:" + project.composeViewModel,
+            composeLivedata  : "androidx.compose.runtime:runtime-livedata:" + project.composeLivedata
     ]
 
     domainDependencies = [

@@ -4,11 +4,11 @@ import com.projectBase.base.BaseViewModel
 import com.projectBase.ui.main.MainState
 import kotlinx.coroutines.delay
 
-class SplashViewModel : BaseViewModel<SplashViewState, SplashNavigator.Navigation>() {
+class SplashViewModel : BaseViewModel<SplashState, SplashNavigator.Navigation>() {
 
     override fun provideToolbar() = MainState.Toolbar()
 
-    override val initialViewState: SplashViewState = SplashViewState()
+    override val initialViewState: SplashState = SplashState()
 
     override fun onResume(firstTime: Boolean) {
         // Nothing to do

@@ -1,5 +1,6 @@
 package com.projectBase.ui.home
 
+import androidx.compose.runtime.Composable
 import com.carmabs.ema.android.viewmodel.EmaAndroidViewModel
 import com.carmabs.ema.core.state.EmaExtraData
 import com.projectBase.R
@@ -7,7 +8,7 @@ import com.projectBase.base.BaseFragment
 import com.projectBase.ui.main.MainNavigator
 import org.kodein.di.generic.instance
 
-class HomeViewFragment : BaseFragment<HomeViewState, HomeViewModel, MainNavigator.Navigation>() {
+class HomeViewFragment : BaseFragment<HomeState, HomeViewModel, MainNavigator.Navigation>() {
 
     override val layoutId: Int = R.layout.fragment_home
 
@@ -25,7 +26,8 @@ class HomeViewFragment : BaseFragment<HomeViewState, HomeViewModel, MainNavigato
 
     }
 
-    override fun onNormal(data: HomeViewState) {
+    @Composable
+    override fun OnNormal(data: HomeState) {
 
     }
 

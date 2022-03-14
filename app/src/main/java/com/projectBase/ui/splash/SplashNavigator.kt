@@ -20,6 +20,6 @@ class SplashNavigator(override val navController: NavController, override val ac
     }
 
     private fun splashToHome() {
-        navigateWithAction(R.id.action_splashViewFragment_to_mainToolbarsViewActivity)
+
     }
 }
