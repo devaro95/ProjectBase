@@ -3,8 +3,10 @@ package com.projectBase.inject
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import com.projectBase.base.BaseActivity
+import com.projectBase.ui.login.LoginNavigator
 import com.projectBase.ui.main.MainNavigator
 import com.projectBase.ui.main.MainViewModel
+import com.projectBase.ui.register.RegisterNavigator
 import com.projectBase.ui.splash.SplashNavigator
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
@@ -30,9 +32,14 @@ fun injectionActivityModule(activity: BaseActivity) = Kodein.Module(name = "Acti
 
 
     //NAVIGATOR//
-    bind<SplashNavigator>() with singleton { SplashNavigator(instance(), instance()) }
 
     bind<MainNavigator>() with singleton { MainNavigator() }
+
+    bind<SplashNavigator>() with singleton { SplashNavigator(instance(), instance()) }
+
+    bind<LoginNavigator>() with singleton { LoginNavigator(instance(), instance()) }
+
+    bind<RegisterNavigator>() with singleton { RegisterNavigator(instance(), instance()) }
 
     //DIALOG//
 

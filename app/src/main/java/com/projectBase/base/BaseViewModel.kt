@@ -8,9 +8,7 @@ abstract class BaseViewModel<T : Any, NS : EmaNavigationState> : EmaViewModel<T,
 
     abstract fun provideToolbar(): MainState.Toolbar
 
-    override fun onResume(firstTime: Boolean) {
-    }
+    override fun onResume(firstTime: Boolean) = Unit
 
-    override fun onStartFirstTime(statePreloaded: Boolean) {
-    }
+    override fun onStartFirstTime(statePreloaded: Boolean) = Unit
 }
