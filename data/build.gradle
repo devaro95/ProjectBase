@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../buildsystem/dependencies.gradle'
+
+android {
+    def cfg = rootProject.ext.configuration
+    compileSdkVersion cfg.compileVersion
+
+    defaultConfig {
+        minSdkVersion cfg.minSdk
+        targetSdkVersion cfg.targetSdk
+    }
+
+    publishNonDefault true
+
+    flavorDimensions 'environment'
+
+    productFlavors {
+        mock {
+            dimension 'environment'
+            buildConfigField 'String', 'URL', '"http://10.0.2.2:3000"'
+        }
+
+        dev {
+            dimension 'environment'
+            buildConfigField 'String', 'URL', '"http://10.0.2.2:3000"'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+}
+
+dependencies {
+    def dataDependencies = rootProject.ext.dataDependencies
+
+    implementation project(':domain')
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation presentationDependencies.coreKotlin
+
+    implementation dataDependencies.kodein
+    implementation dataDependencies.kodeinAndroid
+
+    //Net
+    implementation dataDependencies.retrofit
+    implementation dataDependencies.retrofitScalars
+    implementation dataDependencies.retrofitGson
+    implementation dataDependencies.retrofitXml
+    implementation dataDependencies.okHttpLogginInterceptor
+    implementation dataDependencies.retrofitCoroutinesAdapter
+}
+
+repositories {
+    mavenCentral()
+}
