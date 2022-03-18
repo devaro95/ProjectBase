@@ -12,23 +12,43 @@ class RegisterViewModel(private val registerUseCase: RegisterUseCase) : BaseView
     override fun provideToolbar() = MainState.Toolbar(isVisible = false)
 
     fun onActionEmailChange(email: String) {
-        updateDataState { copy(email = email) }
+        getDataState().apply {
+            if (this.email != email) {
+                updateToNormalState { copy(email = email) }
+            }
+        }
     }
 
     fun onActionUsernameChange(username: String) {
-        updateDataState { copy(username = username) }
+        getDataState().apply {
+            if (this.username != username) {
+                updateToNormalState { copy(username = username) }
+            }
+        }
     }
 
     fun onActionPasswordChange(password: String) {
-        updateDataState { copy(password = password) }
+        getDataState().apply {
+            if (this.password != password) {
+                updateToNormalState { copy(password = password) }
+            }
+        }
     }
 
     fun onActionHeightChange(height: String) {
-        updateDataState { copy(height = height) }
+        getDataState().apply {
+            if (this.height != height) {
+                updateToNormalState { copy(height = height) }
+            }
+        }
     }
 
     fun onActionWeightChange(weight: String) {
-        updateDataState { copy(weight = weight) }
+        getDataState().apply {
+            if (this.weight != weight) {
+                updateToNormalState { copy(weight = weight) }
+            }
+        }
     }
 
     fun onActionRegisterClick() {

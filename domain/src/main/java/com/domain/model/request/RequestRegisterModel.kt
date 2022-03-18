@@ -1,6 +1,7 @@
 package com.domain.model.request
 
 import com.carmabs.ema.core.constants.STRING_EMPTY
+import java.io.Serializable
 
 data class RequestRegisterModel(
     val email: String = STRING_EMPTY,
@@ -12,4 +13,4 @@ data class RequestRegisterModel(
     val age: String = STRING_EMPTY,
     val height: String = STRING_EMPTY,
     val weight: String = STRING_EMPTY,
-)
+) : Serializable

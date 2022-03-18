@@ -29,6 +29,11 @@ android {
             buildConfigField 'Boolean', 'PORTRAIT_ORIENTATION', 'false'
         }
 
+        pro {
+            dimension 'environment'
+            buildConfigField 'Boolean', 'PORTRAIT_ORIENTATION', 'false'
+        }
+
     }
 
     buildTypes {

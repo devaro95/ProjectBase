@@ -20,12 +20,21 @@ android {
     productFlavors {
         mock {
             dimension 'environment'
-            buildConfigField 'String', 'URL', '"http://10.0.2.2:3000"'
+            buildConfigField 'String', 'BASE_URL', '"http://10.0.2.2:3000"'
         }
 
         dev {
             dimension 'environment'
-            buildConfigField 'String', 'URL', '"http://10.0.2.2:3000"'
+            buildConfigField 'String', 'BASE_URL', '"https://parseapi.back4app.com/"'
+            buildConfigField 'String', 'APPLICATION_ID', '"eKiCkPPyxPVm5pvjLEP4WbtcMxhnv9gj0RT4mW5C"'
+            buildConfigField 'String', 'API_KEY', '"9HrY1NMgvn22gBQ8o0kZMLhtV4qjPVkiIG8gr5Ah"'
+        }
+
+        pro {
+            dimension 'environment'
+            buildConfigField 'String', 'BASE_URL', '"https://parseapi.back4app.com/"'
+            buildConfigField 'String', 'APPLICATION_ID', '"eKiCkPPyxPVm5pvjLEP4WbtcMxhnv9gj0RT4mW5C"'
+            buildConfigField 'String', 'API_KEY', '"9HrY1NMgvn22gBQ8o0kZMLhtV4qjPVkiIG8gr5Ah"'
         }
     }
 

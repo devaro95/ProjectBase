@@ -33,7 +33,7 @@ fun LoginScreen(data: LoginState, listeners: LoginListeners?) {
         verticalArrangement = Arrangement.Center
     ) {
         PrimaryTextField(
-            value = data.email,
+            value = data.username,
             onValueChange = { listeners?.onEmailChange(it) },
             label = stringResource(R.string.login_email_hint),
         )
