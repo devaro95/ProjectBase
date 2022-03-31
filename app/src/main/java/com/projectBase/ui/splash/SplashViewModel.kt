@@ -6,7 +6,7 @@ import kotlinx.coroutines.delay
 
 class SplashViewModel : BaseViewModel<SplashState, SplashNavigator.Navigation>() {
 
-    override fun provideToolbar() = MainState.Toolbar()
+    override fun provideToolbar() = MainState.Toolbar(isVisible = false)
 
     override val initialViewState: SplashState = SplashState()
 
