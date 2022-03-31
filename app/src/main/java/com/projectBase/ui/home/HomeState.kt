@@ -1,8 +1,8 @@
 package com.projectBase.ui.home
 
-import com.carmabs.ema.core.constants.STRING_EMPTY
 import com.carmabs.ema.core.state.EmaBaseState
+import com.domain.model.MuscleExerciseModel
 
 data class HomeState(
-    val title: String = STRING_EMPTY,
+    val listExercises: MutableList<MuscleExerciseModel> = mutableListOf(),
 ) : EmaBaseState

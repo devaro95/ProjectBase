@@ -3,6 +3,7 @@ package com.projectBase.ui.home
 import androidx.compose.runtime.Composable
 import com.carmabs.ema.android.viewmodel.EmaAndroidViewModel
 import com.carmabs.ema.core.state.EmaExtraData
+import com.domain.model.MuscleExerciseModel
 import com.projectBase.R
 import com.projectBase.base.BaseFragment
 import com.projectBase.ui.main.MainNavigator
@@ -26,13 +27,22 @@ class HomeViewFragment : BaseFragment<HomeState, HomeViewModel, MainNavigator.Na
 
     }
 
-    @Composable
-    override fun OnNormal(data: HomeState) {
+    override fun onError(error: Throwable) {
 
     }
 
-    override fun onError(error: Throwable) {
-
+    @Composable
+    override fun OnNormal(data: HomeState) {
+        HomeScreen(homeState = HomeState(
+            mutableListOf(
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0),
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0),
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0),
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0),
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0),
+                MuscleExerciseModel(MuscleExerciseModel.MuscleGroupType.CHEST, "", 0, 0.0))
+        )
+        )
     }
 
 }

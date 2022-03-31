@@ -25,14 +25,14 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : BaseViewModel<Log
 
     fun onActionLoginClick() {
         getDataState().apply {
-            if (fieldsAreValid()) updateToErrorState(Exception())
+            if (!fieldsAreValid()) updateToErrorState(Exception())
             else executeLoginUseCase()
         }
     }
 
     private fun LoginState.executeLoginUseCase() {
         executeUseCaseWithException({
-            val loginResponse = loginUseCase.execute(
+            loginUseCase.execute(
                 RequestLoginModel(
                     username = username,
                     password = password
