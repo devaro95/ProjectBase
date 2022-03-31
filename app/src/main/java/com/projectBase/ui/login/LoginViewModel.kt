@@ -11,9 +11,9 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : BaseViewModel<Log
 
     override fun provideToolbar() = MainState.Toolbar(isVisible = false)
 
-    fun onActionEmailChange(email: String) {
+    fun onActionEmailChange(username: String) {
         getDataState().also {
-            if (email != it.email) updateToNormalState { copy(email = email) }
+            if (username != it.username) updateToNormalState { copy(username = username) }
         }
     }
 
@@ -32,9 +32,9 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : BaseViewModel<Log
 
     private fun LoginState.executeLoginUseCase() {
         executeUseCaseWithException({
-            loginUseCase.execute(
+            val loginResponse = loginUseCase.execute(
                 RequestLoginModel(
-                    email = email,
+                    username = username,
                     password = password
                 )
             )
@@ -46,9 +46,5 @@ class LoginViewModel(private val loginUseCase: LoginUseCase) : BaseViewModel<Log
         navigate(LoginNavigator.Navigation.FromLoginToRegister)
     }
 
-    private fun LoginState.fieldsAreValid() = email.isEmpty() || password.isEmpty() || password.length < MIN_PASSWORD_LENGTH
-
-    companion object {
-        const val MIN_PASSWORD_LENGTH = 6
-    }
+    private fun LoginState.fieldsAreValid() = username.isEmpty() || password.isEmpty()
 }

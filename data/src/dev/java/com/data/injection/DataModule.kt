@@ -4,15 +4,24 @@ import com.carmabs.ema.core.concurrency.AsyncManager
 import com.carmabs.ema.core.concurrency.ConcurrencyManager
 import com.carmabs.ema.core.concurrency.DefaultAsyncManager
 import com.carmabs.ema.core.concurrency.DefaultConcurrencyManager
+import com.data.manager.ContextNetworkManager
+import com.data.net.ErrorHandler
+import com.data.net.RMyGymErrorHandler
 import com.data.repository.NetworkRepository
+import com.domain.manager.NetworkManager
 import com.domain.repository.Repository
 import org.kodein.di.Kodein
 import org.kodein.di.generic.bind
+import org.kodein.di.generic.instance
 import org.kodein.di.generic.singleton
 
 fun generateDataModule() = Kodein.Module(name = "DataModule") {
 
-    bind<Repository>() with singleton { NetworkRepository() }
+    bind<ErrorHandler>() with singleton { RMyGymErrorHandler() }
+
+    bind<NetworkManager>() with singleton { ContextNetworkManager(instance()) }
+
+    bind<Repository>() with singleton { NetworkRepository(instance(), instance()) }
 
     bind<AsyncManager>() with singleton { DefaultAsyncManager() }
 

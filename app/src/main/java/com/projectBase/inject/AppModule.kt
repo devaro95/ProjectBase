@@ -28,6 +28,4 @@ fun generateAppModule(app: Application) = Kodein.Module(name = "AppModule") {
     //Manager
 
     bind<ResourceManager>() with singleton { ContextResourceManager(app) }
-
-    bind<NetworkManager>() with singleton { ContextNetworkManager(instance()) }
 }
