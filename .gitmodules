@@ -1,0 +1,3 @@
+[submodule "compose-components"]
+	path = compose-components
+	url = https://github.com/varo95m/compose-components.git

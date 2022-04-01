@@ -1,6 +1,5 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
 
 def cfg = rootProject.ext.configuration
 
@@ -47,8 +46,8 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerVersion "1.5.10"
-        kotlinCompilerExtensionVersion "1.0.0-beta08"
+        kotlinCompilerVersion "1.6.10"
+        kotlinCompilerExtensionVersion "1.1.1"
     }
 
     compileOptions {
@@ -72,6 +71,7 @@ configurations {
 dependencies {
     implementation project(':domain')
     implementation project(':data')
+    implementation(project(':compose-components'))
 
     //EMA
     implementation presentationDependencies.emaAndroid
